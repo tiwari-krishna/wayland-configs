@@ -1,0 +1,8 @@
+#!/bin/sh
+
+name="$(ls ~/Data/Media/Movies | tofi --prompt-text "Select Movie:")"
+
+case $name in
+	"") exit 0;;
+	*) mpv ~/Data/Media/Movies/$name;;
+esac

@@ -1,13 +1,13 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Noto Sans Medium;
+    font-family: Noto Sans Medium, FontAwesome, sans-serif;
     font-size: 15px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.9);
-    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-    color: #421975;
+    background-color: rgba(02, 08, 09, 0.9);
+    border-bottom: 0px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -99,12 +99,12 @@ button:hover {
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+    margin-left: 5;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+    margin-right: 5;
 }
 
 #clock {
@@ -209,7 +209,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #111B1D;
 }
 
 #tray > .passive {
