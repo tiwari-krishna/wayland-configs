@@ -4,6 +4,7 @@ output * bg $HOME/.cache/wall fill
 output LVDS-1 resolution 1366x768 position 0,0
 
 # Autostart
+exec pipewire
 exec mpd
 exec wl-clipboard
 exec waybar -c ~/.config/sway/waybar/config -s ~/.config/sway/waybar/style.css
@@ -41,8 +42,9 @@ set $right l
 set $term foot
 set $menu exec $(tofi-run)
 
+# Settings
 default_border pixel 2
-default_floating_border pixel 4
+default_floating_border pixel 1
 
 smart_borders on
 smart_gaps off
@@ -51,9 +53,6 @@ gaps inner 4
 gaps outer 6
 
 font pango:monospace 10
-
-titlebar_border_thickness 0
-titlebar_padding 0
 
 # Still to be worked
 bindsym $mod+z exec clipmenu
@@ -83,7 +82,7 @@ bindsym $mod+i exec grim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 bindsym $mod+Shift+i exec grim -g "$(slurp)" ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 bindsym $mod+Control+i exec grim -g "$(slurp)" - | wl-copy
 
-bindsym $mod+F12 exec wrecording-menu
+bindsym $mod+F12 exec recording-menu
 bindsym $mod+Shift+F12 exec killall ffmpeg
 bindsym $mod+F9 exec wshowkeys -a bottom -F "Noto Sans Medium 20"
 bindsym $mod+Shift+F9 exec killall wshowkey
@@ -119,7 +118,7 @@ bindsym $mod+Shift+c exec confedit
 bindsym $mod+Control+r exec --no-startup-id webcam-show
 bindsym $alt+w exec --no-startup-id $term -e nmtui
 bindsym $mod+Shift+n exec --no-startup-id $term -e nvim $HOME/.cache/ScratchNote.md
-bindsym $mod+a exec --no-startup-id $term -e ranger
+bindsym $mod+a exec --no-startup-id $term -e lf
 bindsym $mod+v exec --no-startup-id qbittorrent
 bindsym $mod+Shift+v exec --no-startup-id minitube
 bindsym $mod+x exec --no-startup-id swaylock -f -c 000000
